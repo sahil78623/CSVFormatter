@@ -18,7 +18,7 @@ export const insertAuthor = (authors) => {
             await Author.deleteMany()
             await Author.insertMany(authorData)
             console.log('Authors Inserted')
-            process.exit()
+            // process.exit()
         }
         catch(error) {
             console.log(`error: ${error}`)
@@ -52,7 +52,7 @@ const util = (data, lastRow) => {
         result.push({
             'title': columns[0], 
             'isbn': columns[1], 
-            'authors': authors,
+            'author': authors,
             [lastRow]: lastRowData
         })
     }
@@ -65,7 +65,7 @@ export const insertBooksAndMagazenesData = (books, magazenes) => {
     let booksAndMagazenesData = [...booksData, ...magazenesData]
 
     // console.log('magazene data')
-    console.log(booksAndMagazenesData)
+    // console.log(booksAndMagazenesData)
 
     const inserData = async () => {
         try {

@@ -5,10 +5,8 @@ export const getTotalData = async(req, res) => {
         const totalData = await Data.find({})
         res.send(totalData)
         // console.log(`totalData: ${totalData}`)
-        process.exit()
     }
     catch(error) {
-        console.log(`error: ${error}`)
-        process.exit(1)
+        res.send(`error: ${error}`)
     }
 }
